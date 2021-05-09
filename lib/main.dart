@@ -45,7 +45,8 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Center(
-              child: Text( questionBank[questionNumber].questionText,
+              child: Text(
+                questionBank[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -99,8 +100,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
-                bool correctAnswer =
-                    questionBank[questionNumber].questionAnswer;
+                bool correctAnswer = questionBank[questionNumber].questionAnswer;
                 if (false == correctAnswer) {
                   print('user got it right!');
                 } else {
