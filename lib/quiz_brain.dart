@@ -1,7 +1,9 @@
+import 'package:flutter/material.dart';
 import 'question.dart';
 
 class QuizBrain {
   int _questionNumber = 0;
+  List<Widget> scoreKeeper = [];
 
   List<Question> _questionBank = [
     Question('Some cats are actually allergic to humans', true),
@@ -40,10 +42,16 @@ class QuizBrain {
   }
 
   void nextQuestion() {
-    if (_questionNumber < _questionBank.length - 1) {
+    if (_questionNumber <= _questionBank.length) {
       _questionNumber++;
+      print(_questionNumber);
     }
-    print(_questionNumber);
-    print(_questionBank.length);
+  }
+
+  void isFinished() {
+    if (_questionNumber >= _questionBank.length) {
+      scoreKeeper.clear();
+      _questionNumber = 0;
+    }
   }
 }
